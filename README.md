@@ -1,74 +1,116 @@
-**Smart Bookmark Manager**
 
-A simple full-stack bookmark manager built using Next.js, Supabase, and Tailwind CSS.
+# Smart Bookmark Manager
 
-Live Demo
+A simple, modern full-stack Bookmark Manager built using **Next.js, Supabase, and Tailwind CSS**.
+This app allows users to securely save, manage, and access their personal bookmarks from anywhere.
 
-https://smart-bookmark-app-sachin.vercel.app
+---
 
-GitHub Repo
-https://github.com/sachinbmgithub/smart-bookmark-app
+## 🌐 Live Demo
 
-**Features**
+🔗 https://smart-bookmark-app-sachin.vercel.app
 
-Google OAuth login (Signup & Login)
+## 💻 GitHub Repository
 
-Add bookmarks (Title + URL)
+🔗 https://github.com/sachinbmgithub/smart-bookmark-app
 
-Delete bookmarks
+---------------------------------------------------
 
-Bookmarks are private per user
+#  Features
 
-Real-time sync across tabs
+* 🔐 **Google OAuth Login** (Signup & Login)
+* ➕ **Add Bookmarks** (Title + URL)
+* 🗑️ **Delete Bookmarks**
+* 👤 **Private Bookmarks per User**
+* ⚡ **Realtime Sync Across Tabs**
+* 🚪 **Logout Functionality**
+* ⏳ **Loading Spinner for Better UX**
 
-Logout functionality
+---------------------------------------------------
 
-Loading spinner for better UX
+# 🛠️ Tech Stack
 
-**Tech Stack**
+* **Next.js (App Router)** – Frontend
+* **Supabase** – Backend (Auth + Database)
+* **Tailwind CSS** – Styling
+* **Vercel** – Deployment
 
-Next.js (App Router)
+---------------------------------------------------
+# ⚙️ How It Works
 
-Supabase (Auth, Database, Realtime)
+1. Users log in using **Google OAuth** via Supabase.
+2. Each bookmark is stored with a unique **user_id**.
+3. **Row Level Security (RLS)** ensures users only see their own bookmarks.
+4. **Supabase Realtime** updates bookmarks instantly across multiple tabs.
 
-Tailwind CSS
+---------------------------------------------------
 
-Vercel (Deployment)
+#  Problems Faced & Solutions
 
-**How It Works**
+##  1) Google OAuth Redirect Issue
 
-Users log in using Google OAuth via Supabase.
+**Problem:**
+After login, the app was not redirecting correctly.
 
-Each bookmark is stored with a user_id.
+**Solution:**
+Added the correct redirect URL in Supabase Authentication settings and used `redirectTo` in the login function.
 
-Row Level Security ensures users only see their own bookmarks.
+---
 
-Supabase Realtime updates bookmarks across multiple tabs instantly.
+##  2) Realtime Not Working Across Tabs
 
-**Problems Faced & Solutions**
+**Problem:**
+Bookmarks were not updating automatically in another tab.
 
-1) Google OAuth redirect issue
-Problem: After login, the app was not redirecting correctly.
+**Solution:**
 
-Solution: Added the correct redirect URL in Supabase Authentication settings and used redirectTo in the login function.
+* Enabled **Realtime** for the bookmarks table in Supabase Table Editor
+* Added a realtime subscription in the dashboard page
 
-2) Realtime not working across tabs
+---
 
-Problem: Bookmarks were not updating automatically in another tab.
+##  3) UI Not Updating After Add/Delete
 
-Solution: Enabled Realtime for the bookmarks table in Supabase Table Editor and added a realtime subscription in the dashboard.
+**Problem:**
+Bookmarks appeared only after refreshing the page.
 
-3) UI not updating after add/delete
+**Solution:**
+Called `fetchBookmarks()` after insert/delete to update state instantly.
 
-Problem: Bookmarks appeared only after page refresh.
+---
 
-Solution: Called fetchBookmarks() after insert/delete to update state instantly.
+##  4) Deployment Error on Vercel
 
-4) Deployment error on Vercel
+**Problem:**
+Build failed with error:
 
-Problem: Build failed with: supabaseUrl is required
+```
+supabaseUrl is required
+```
 
-Solution:
+**Solution:**
 Added environment variables in Vercel:
+
+```
 NEXT_PUBLIC_SUPABASE_URL
 NEXT_PUBLIC_SUPABASE_ANON_KEY
+```
+
+---
+
+# 📌 Key Highlights
+
+* 🔐 Secure authentication using Supabase
+* 🧠 Clean state management
+* ⚡ Realtime database updates
+* 📱 Responsive UI with Tailwind CSS
+* 🌍 Fully deployed on Vercel
+
+---
+
+# 👨‍💻 Author
+
+**Sachin B M**
+
+* GitHub: https://github.com/sachinbmgithub
+* Project: Smart Bookmark Manager
