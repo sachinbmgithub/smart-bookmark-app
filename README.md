@@ -1,4 +1,4 @@
-Smart Bookmark Manager
+**Smart Bookmark Manager**
 
 A simple full-stack bookmark manager built using Next.js, Supabase, and Tailwind CSS.
 
@@ -9,7 +9,7 @@ https://smart-bookmark-app-sachin.vercel.app
 GitHub Repo
 https://github.com/sachinbmgithub/smart-bookmark-app
 
-Features
+**Features**
 
 Google OAuth login (Signup & Login)
 
@@ -25,7 +25,7 @@ Logout functionality
 
 Loading spinner for better UX
 
-Tech Stack
+**Tech Stack**
 
 Next.js (App Router)
 
@@ -35,7 +35,7 @@ Tailwind CSS
 
 Vercel (Deployment)
 
-How It Works
+**How It Works**
 
 Users log in using Google OAuth via Supabase.
 
@@ -45,7 +45,7 @@ Row Level Security ensures users only see their own bookmarks.
 
 Supabase Realtime updates bookmarks across multiple tabs instantly.
 
-Problems Faced & Solutions
+**Problems Faced & Solutions**
 
 1) Google OAuth redirect issue
 Problem: After login, the app was not redirecting correctly.
